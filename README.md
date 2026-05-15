@@ -45,4 +45,4 @@ If you have any questions or comments, please feel free to create an issue on gi
 
 ## Development & DEBUG
 TAはここからテストを行ってください。
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lzh-Function/dotai-jisshu/blob/main/notebooks/pkpd.ipynb)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/Lzh-Function/dotai-jisshu/blob/main/notebooks/pkpd_silico.ipynb)
