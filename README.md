@@ -1,6 +1,6 @@
-# latent-demo
+# dotai-jisshu
 
-`latent-demo` は, 潜在変数モデリングを題材にした小規模なColab実習用repoである。
+`dotai-jisshu` は, 動態学の実習を題材にしたColab用repoである。
 
 現在は以下の講義実習を含む。
 
