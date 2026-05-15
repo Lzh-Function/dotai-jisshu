@@ -17,7 +17,7 @@ def fitting(func, data, init_params, method):
             col = col.replace(" (nmol/mL)", "")
         elif method == "Ki_predict":
             col = col.replace(" (% of control)", "")
-        params, cov = curve_fit(func, x, y, p0=init_params, sigma=y)
+        params, cov = curve_fit(func, x, y, p0=init_params[col], sigma=y)
         list_y = []
         for t in x:
             list_y.append(func(t, *params))
