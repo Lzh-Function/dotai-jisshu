@@ -18,15 +18,15 @@ def fitting(func, data, init_params, method):
         elif method == "Ki_predict":
             col = col.replace(" (% of control)", "")
         params, cov = curve_fit(func, x, y, p0=init_params[col], sigma=y)
-        list_y = []
+        optim_y = []
         for t in x:
-            list_y.append(func(t, *params))
+            optim_y.append(func(t, *params))
 
         print(f"===== {col}のフィッティング結果 =====")
         
         if method == "two_compartment":
-            plt.plot(data.index, list_y, marker="", label="fitting")
-            plt.scatter(data.index, data.values, marker="o", label="observed")
+            plt.plot(data.index, optim_y, marker="", label="fitting")
+            plt.scatter(data.index, y, marker="o", label="observed")
             plt.xlabel("Time (min)", fontsize=12)
             plt.ylabel("plasma conc. (μM)", fontsize=12)
             plt.yscale("log")
@@ -38,8 +38,8 @@ def fitting(func, data, init_params, method):
             result_param(params, method)
 
         elif method == "Ki_predict":
-            plt.plot(data.index, list_y,marker="", label="fitting")
-            plt.scatter(data.index, data.values, marker="o", label="observed")
+            plt.plot(data.index, optim_y,marker="", label="fitting")
+            plt.scatter(data.index, y, marker="o", label="observed")
             plt.xlabel("RIF conc. (μM)", fontsize=12)
             plt.ylabel("%CL", fontsize=12)
             plt.xscale("log")
